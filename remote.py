@@ -7,7 +7,7 @@ MQTT_HOST = "tbox"
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected: {reason_code}")
-    client.subscribe("DroidPad/Events")
+    client.subscribe("home/events")
 
 async def turn(dev_num, next_state):
     dev = await kasa.Discover.discover_single(f'192.168.1.{dev_num}')
